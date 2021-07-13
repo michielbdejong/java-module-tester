@@ -2,4 +2,5 @@ FROM maven
 ADD . /app
 WORKDIR /app
 RUN mvn compile
-CMD java ./com/michielbdejong/Main/Main.java
+RUN mvn package
+CMD java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
